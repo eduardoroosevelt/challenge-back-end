@@ -13,6 +13,12 @@ namespace challenge_back_end
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            
+            config.Routes.MapHttpRoute(
+                name: "like",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
